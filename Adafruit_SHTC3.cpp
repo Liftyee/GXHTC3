@@ -69,10 +69,10 @@ bool Adafruit_SHTC3::begin(TwoWire *theWire) {
   reset();
   sleep(false);
 
-  // read the ID
-  if ((readID() & 0x083F) != 0x807) {
-    return false;
-  }
+  // don't read the ID because the GXCAS sensors have a different ID, and it's not clear how it's implemented in the datasheet
+  // if ((readID() & 0x083F) != 0x807) {
+    // return false;
+  // }
   humidity_sensor = new Adafruit_SHTC3_Humidity(this);
   temp_sensor = new Adafruit_SHTC3_Temp(this);
   return true;
