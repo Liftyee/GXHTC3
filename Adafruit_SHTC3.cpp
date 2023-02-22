@@ -70,6 +70,7 @@ bool Adafruit_SHTC3::begin(TwoWire *theWire) {
   sleep(false);
 
   // don't read the ID because the GXCAS sensors have a different ID, and it's not clear how it's implemented in the datasheet
+  // Sensor raw value: 20F0
   // if ((readID() & 0x083F) != 0x807) {
     // return false;
   // }
